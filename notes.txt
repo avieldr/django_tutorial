@@ -1,0 +1,40 @@
+1. INITIALIZATION
+
+--> activate myEnv
+--> cd Desktop\projects\django\exercise
+--> mkdir django_level_five
+--> cd django_level_five
+--> django-admin startproject learning_users
+--> cd learning_users
+--> django-admin startapp basic_app
+# settings.py: adding 'basic_app' to INSTALLED_APPS
+# settings.py: make sure 'django.contrib.auth', 'django.contrib.contenttypes' is in INSTALLED_APPS
+--> python manage.py migrate
+--> python manage.py makemigrations basic_app
+
+--> pip install bcrypt
+--> pip install django[argon2]
+
+# create directories: templates, static, media
+
+# settings.py: add PASSWORD_HASHERS
+# settings.py: configure AUTH_PASSWORD_VALIDATORS
+# settings.py: create TEMPLATE_DIR var, add TEMPLATE_DIR to 'DIRS' on TEMPLATES
+# settings.py: create STATIC_DIR, STATICFILES_DIRS vars, add STATIC_DIR to STATICFILES_DIRS
+# settings.py: create MEDIA_ROOT, MEDIA_URL vars
+
+2. CREATE USER-AUTH MODEL
+--> pip install pillow
+# basic_app/models.py: create UserProfileInfo class - a oneToOne model that expends the builtin User model
+# create directory: media\profile_pics
+# create basic_app\forms.py, add UserForm, UserProfileInfoForm classes to it
+# basic_app\admin.py: register UserProfileInfo model
+--> python manage.py migrate
+--> python manage.py makemigrations basic_app
+--> python manage.py migrate
+
+# crete directory and files: templates\basic_app, templates\basic_app\base.html, templates\basic_app\imdex.html, templates\basic_app\login.html, templates\basic_app\registration.html
+# learning_users\urls.py: add url's
+# create file: basic_app\urls.py and add urls
+
+# views.py: create views
